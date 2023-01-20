@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="colored">
+    <h2>Заметки</h2>
+</div><br><br><button class="button-87" type="button"  role="button"   onclick="window.location.href='addNewTask'">Добавить</button>
+<br>
+
+<div class="div" th:each="task : ${allTasks}">
+<strong><p style="font-size: 26px" th:text="${task.nameTask}"></p></strong>
+<p th:text="${task.task}"></p>
+    <a class="shine-button" th:href = "@{${task.id} + '/updateTask'}" th:text = "'Изменить'"></a>
+    <a class="shine-button" th:href="@{${task.id} + '/deleteTask'}" th:text="'Удалить'"></a>
+</div>
+
+
+</body>
+</html>

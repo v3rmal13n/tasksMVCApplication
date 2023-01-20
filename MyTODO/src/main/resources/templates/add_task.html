@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/saveTask}" th:object="${tasks}">
+        Название заметки<input type="text" th:field="*{nameTask}"><br>
+        Сама заметка<input type="text" th:field="*{task}"><br>
+        <input type="submit" value="ADD">
+    </form>
+</body>
+</html>
